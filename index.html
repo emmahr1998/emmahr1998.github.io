@@ -165,6 +165,29 @@
       .form-row { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 12px; text-align: center; }
     }
+
+    /* SO... WHY ME? */
+    #why-me { background: var(--cream); }
+    .why-me-layout { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 80px; align-items: center; }
+    .why-me-photo-wrap { position: relative; display: flex; justify-content: center; padding: 25px; }
+    .why-me-polaroid { background: #fff; padding: 15px 15px 22px; width: 100%; max-width: 380px; transform: rotate(-5deg); box-shadow: 0 16px 42px rgba(26,24,20,.15); transition: transform .3s ease; }
+    .why-me-polaroid:hover { transform: rotate(0deg) scale(1.02); }
+    .why-me-photo-frame { width: 100%; aspect-ratio: 4/5; background: #e8d5bf; position: relative; display: grid; place-items: center; overflow: hidden; }
+    .why-me-photo-frame::before { content: '😭'; position: absolute; font-size: 100px; }
+    .why-me-photo { position: relative; width: 100%; height: 100%; object-fit: cover; display: block; }
+    .why-me-photo-caption { font-family: 'Playfair Display', serif; font-size: 24px; font-style: italic; text-align: center; margin-top: 17px; }
+    .why-me-decoration { position: absolute; top: 2%; right: 0; color: var(--accent); font-size: 64px; transform: rotate(14deg); }
+    .why-me-content p { font-size: 15px; font-weight: 300; line-height: 1.85; color: var(--ink-light); margin-bottom: 19px; }
+    .why-me-content strong { color: var(--ink); font-weight: 500; }
+    .why-me-question { font-family: 'Playfair Display', serif; font-size: clamp(25px,3vw,37px); font-weight: 400; font-style: italic; background: var(--accent-light); padding: 17px 22px; margin: 24px 0; transform: rotate(-1deg); }
+    .why-me-content .why-me-begging { font-size: 20px; color: var(--ink); }
+    .why-me-begging strong { display: block; color: var(--accent); font-family: 'Playfair Display',serif; font-size: clamp(26px,3vw,36px); margin-top: 7px; }
+    .why-me-joke span { display: block; font-size: 13px; font-style: italic; color: var(--ink-muted); }
+    .why-me-content .why-me-promise { padding-left: 18px; border-left: 3px solid var(--accent); font-weight: 500; color: var(--ink); }
+    .why-me-content .why-me-ending { font-family: 'Playfair Display',serif; font-size: 22px; font-style: italic; color: var(--ink); margin-top: 26px; }
+    .why-me-button { margin-top: 8px; }
+    @media (max-width: 900px) { .why-me-layout { grid-template-columns: 1fr; gap: 30px; } .why-me-polaroid { max-width: 310px; } }
+    @media (max-width: 600px) { .nav-links { gap: 10px; } .nav-links a { font-size: 10px; letter-spacing: .03em; } nav { padding: 18px 12px; } .nav-logo { font-size: 17px; } .why-me-photo-wrap { padding: 15px; } }
   </style>
 </head>
 <body>
@@ -174,6 +197,7 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#why-me">Why Me?</a></li>
     <li><a href="#resume">Résumé</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -401,7 +425,7 @@
 <!-- RESUME -->
 <section id="resume">
   <div class="section-header fade-up">
-    <span class="section-number">03</span>
+    <span class="section-number">04</span>
     <h2 class="section-title">Résumé</h2>
     <div class="section-rule"></div>
   </div>
@@ -496,17 +520,50 @@
   </div>
 </section>
 
+<!-- WHY ME -->
+<section id="why-me">
+  <div class="section-header fade-up">
+    <span class="section-number">04 /</span>
+    <h2 class="section-title">So... Why Me?</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="why-me-layout">
+    <div class="why-me-photo-wrap fade-up">
+      <div class="why-me-polaroid">
+        <div class="why-me-photo-frame">
+          <!-- Replace crying-me.jpg with your own dramatic crying photo. -->
+          <img class="why-me-photo" src="crying-me.jpg" alt="Emma dramatically pleading to be hired" onerror="this.style.display='none'" />
+        </div>
+        <p class="why-me-photo-caption">Please hire me? 😭</p>
+      </div>
+      <span class="why-me-decoration" aria-hidden="true">♡</span>
+    </div>
+    <div class="why-me-content fade-up">
+      <p>So, after scrolling through my entire portfolio, you're probably asking yourself...</p>
+      <h3 class="why-me-question">"Okay, but why should we hire her?"</h3>
+      <p class="why-me-begging">Well, first of all... <strong>BECAUSE I'M BEGGING. 😭</strong></p>
+      <p class="why-me-joke">Just kidding. <span>(Unless begging works. In that case, I'm suddenly very flexible.)</span></p>
+      <p>But seriously, I'm <strong>hardworking, curious, positive,</strong> and the kind of person who genuinely gets excited about learning something new. Yes, even when it comes with 47 error messages.</p>
+      <p>I'm a <strong>team player</strong>, I love a good challenge, and I don't give up just because something doesn't work the first time. Or the second. Or the seventeenth.</p>
+      <p>I have <strong>7+ years of experience in tech</strong>, a <strong>Computer Science degree</strong>, and a slightly concerning determination to prove myself.</p>
+      <p class="why-me-promise">I don't expect to know everything on day one. But you can expect me to give 100%, learn fast, ask questions, and become someone your team can count on.</p>
+      <p class="why-me-ending">So... what do you say? Give me a chance to make us both look good? 😉</p>
+      <a href="#contact" class="btn-primary why-me-button">Fine, let's hire her</a>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-header fade-up">
-    <span class="section-number">04</span>
+    <span class="section-number">05</span>
     <h2 class="section-title">Let's Connect</h2>
     <div class="section-rule"></div>
   </div>
   <div class="contact-layout">
     <div class="fade-up">
       <p class="contact-intro">
-        I'm actively looking for student positions in DevOps, infrastructure, or software development. If you have an opportunity or just want to connect — send me a message and I'll get back to you promptly.
+        I'm actively looking for junior positions in DevOps, infrastructure, or software development. If you have an opportunity or just want to help a poor junior send me a message and I'll get back to you promptly.
       </p>
       <div class="contact-info-item">
         <div class="contact-info-icon">@</div>
