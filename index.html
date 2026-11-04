@@ -19,7 +19,7 @@
       --accent-light: #e8d5bf;
       --rule: #d8d2c8;
       --white: #ffffff;
-      --section-pad: 100px;
+      --section-pad: 64px;
     }
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.6; font-size: 16px; }
@@ -67,7 +67,7 @@
     .hero-caption .label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); margin-top: 4px; }
 
     section { padding: var(--section-pad) 60px; }
-    .section-header { display: flex; align-items: baseline; gap: 20px; margin-bottom: 64px; }
+    .section-header { display: flex; align-items: baseline; gap: 20px; margin-bottom: 36px; }
     .section-number { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--accent); letter-spacing: 0.1em; font-style: italic; }
     .section-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 48px); font-weight: 400; line-height: 1.1; letter-spacing: -0.02em; }
     .section-rule { flex: 1; height: 1px; background: var(--rule); margin-left: 20px; }
@@ -155,7 +155,7 @@
     @media (max-width: 900px) {
       nav { padding: 20px 24px; }
       .nav-links { gap: 20px; }
-      section { padding: 70px 24px; }
+      section { padding: 48px 24px; }
       .hero { grid-template-columns: 1fr; padding: 120px 24px 60px; text-align: center; }
       .hero-eyebrow { justify-content: center; }
       .hero-subtitle { margin: 0 auto 48px; }
@@ -207,6 +207,12 @@
 .about-crying-photo.missing-photo { border: 1px dashed var(--accent); }
 .about-crying-photo.missing-photo::before { content: 'Your dramatic crying photo goes here'; display: grid; place-items: center; min-height: 140px; text-align: center; color: var(--ink-muted); background: var(--cream); font-size: 14px; padding: 16px; }
 .about-text .about-transition { font-style: italic; color: var(--ink); }
+  /* Keep About Me heading close to its two-column content */
+  #about > .section-header { margin-bottom: 18px; }
+  #about .about-grid { margin-top: 0; padding-top: 0; }
+  @media (max-width: 900px) {
+    #about > .section-header { margin-bottom: 18px; }
+  }
 </style>
 </head>
 <body>
@@ -265,7 +271,7 @@
 <p>But seriously, I'm hardworking, positive, curious, and a team player who genuinely loves learning new things. I don't give up easily, even after the 47th error message.</p>
 <p>I might not know everything yet, but I bring determination, real-world experience, and a slightly concerning desire to prove myself.</p>
 <p><strong>Give me a chance, and I'll make sure you won't regret it.</strong></p>
-<p class="about-transition">Still not convinced by my charming personality? here are some of my projects and experience.</p>
+<p class="about-transition">Still not convinced by my charming personality? Tough crowd. Fine, here are some of my projects and experience.</p>
 </div>
 <div class="fade-up about-skills">
 <p class="skills-category">Programming Languages</p>
@@ -524,7 +530,7 @@
 <div class="contact-layout">
 <div class="fade-up">
 <p class="contact-intro">
-        I'm actively looking for <strong>junior positions in DevOps, infrastructure, or software development</strong>. If you have an opportunity or just want to help a girl out, give me a call or send me a message - I promise I'll get back to you faster than I fix a production alert.
+        I'm actively looking for <strong>junior positions in DevOps, infrastructure, or software development</strong>. If you have an opportunity or just want to help a girl out, give me a call or send me a message — I promise I'll get back to you faster than I fix a production alert.
       </p>
 <div class="contact-info-item">
 <div class="contact-info-icon">@</div>
@@ -587,7 +593,7 @@
 </form>
 <div class="form-success" id="formSuccess">
 <p style="font-family:'Playfair Display',serif;font-size:22px;font-style:italic;color:var(--accent);margin-bottom:10px;">Message sent!</p>
-<p style="font-size:14px;color:#888;font-family:'DM Sans',sans-serif;font-weight:300;">Thank you  I'll get back to you as soon as possible.</p>
+<p style="font-size:14px;color:#888;font-family:'DM Sans',sans-serif;font-weight:300;">Thank you — I'll get back to you as soon as possible.</p>
 </div>
 </div>
 </div>
